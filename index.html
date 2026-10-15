@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dominic Angulo, student videographer, editor and producer in Miami. Photo and video for events and sports games. Book online.">
+<title>Dominic Angulo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500;75..100,700;75..100,800;75..100,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+
+/* Layout: navy CCNN-jacket masthead with portrait, page tabs, resume rows with a label column, colorful title-card video grid. */
+[hidden] { display: none !important; }
+:root {
+  --bg: #f6f5f2;
+  --paper: #ffffff;
+  --ink: #141416;
+  --muted: #64625c;
+  --line: #d1d2d4;
+  --navy: #0e0e10;        /* studio black */
+  --navy-2: #1c1c20;
+  --red: #c9a227;         /* Emmy gold */
+  --sky: #e8d08a;         /* pale gold */
+  --gold: #d4af37;
+  --silver: #d1d2d4;
+  --deep: #10223b;
+  --crimson: #a22e33;        /* trophies */
+  --on-dark: #fbf6f3;
+  --accent: #8a6d12;
+  --ph: #8a7a3a;
+  --f-head: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0c0c0e; --paper: #17171a; --ink: #f2f0ea; --muted: #a9a59a; --line: #2c2b28;
+  --accent: #e0c060; --ph: #d4bf6a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0c0c0e; --paper: #17171a; --ink: #f2f0ea; --muted: #a9a59a; --line: #2c2b28;
+  --accent: #e0c060; --ph: #d4bf6a; color-scheme: dark }
+
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 18px; line-height: 1.6; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+p { margin: 0; max-width: 40em; }
+.ph { color: var(--ph); font-style: italic; border-bottom: 1px dashed var(--ph); }
+
+/* ---------- masthead ---------- */
+.mast { position: relative; overflow: hidden; color: var(--on-dark);
+  background:
+    radial-gradient(900px 420px at 85% 10%, rgba(212,175,55,.22), transparent 60%),
+    radial-gradient(700px 380px at 0% 100%, rgba(162,46,51,.35), transparent 60%),
+    linear-gradient(160deg, #10223b, var(--navy) 62%, #0a0a0c); }
+.mast::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.08) 0 1px, transparent 1px 3px); }
+.mast-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; align-items: end; padding-block: 48px 0; }
+.mast-grid > * { min-width: 0; }
+.mast-text { display: flex; flex-direction: column; gap: 16px; padding-bottom: 40px; }
+.onair { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #141416; font-family: var(--f-head); font-weight: 800; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; padding: 6px 12px 5px; border-radius: 3px; box-shadow: 0 0 0 4px rgba(212,175,55,.3); }
+.onair .dot { width: 8px; height: 8px; border-radius: 50%; background: #141416; animation: blink 1.4s steps(1) infinite; }
+@keyframes blink { 50% { opacity: .2 } }
+.name { margin: 0; font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: clamp(56px, 10vw, 112px); line-height: .88; letter-spacing: -.01em; text-transform: uppercase; }
+.name span { color: transparent; -webkit-text-stroke: 2px var(--sky); }
+.role { font-family: var(--f-head); font-weight: 700; font-size: 17px; letter-spacing: .14em; text-transform: uppercase; color: var(--sky); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tags span { font-family: var(--f-head); font-size: 14px; font-weight: 500; padding: 5px 12px; border-radius: 999px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); }
+.tags span:first-child { background: var(--gold); color: #1d1503; border-color: var(--gold); font-weight: 700; }
+.contact { display: flex; flex-wrap: wrap; gap: 4px 20px; font-family: var(--f-head); font-size: 15px; color: rgba(251,246,243,.82); }
+.contact a { color: var(--sky); }
+.portrait { margin: 0; position: relative; justify-self: end; width: min(100%, 360px); }
+.portrait::before { content: ""; position: absolute; inset: 18px -14px -14px 18px; border: 3px solid var(--red); border-radius: 18px 18px 0 0; }
+.portrait img { position: relative; display: block; width: 100%; height: auto; aspect-ratio: 2/3; object-fit: cover; border-radius: 18px 18px 0 0; box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+.mast nav { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 6px; padding-block: 12px; background: rgba(10,6,14,.55); backdrop-filter: blur(6px); max-width: none; }
+.mast nav a { font-family: var(--f-head); font-weight: 800; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; color: rgba(251,246,243,.75); padding: 8px 16px; border-radius: 999px; transition: background .2s, color .2s; }
+.mast nav a:hover { color: #fff; background: rgba(255,255,255,.1); }
+.mast nav a[aria-current="page"] { color: #141416; background: var(--red); }
+.mast nav { padding-left: max(16px, calc((100% - 1040px) / 2 + 16px), env(safe-area-inset-left, 0px)); }
+
+/* ---------- resume rows ---------- */
+main section[data-page] { padding-block: 44px 72px; display: flex; flex-direction: column; gap: 40px; }
+.row { display: grid; grid-template-columns: 170px 1fr; gap: 24px; border-top: 2px solid var(--line); padding-top: 20px; }
+.row > * { min-width: 0; }
+.label { font-family: var(--f-head); font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); padding-top: 4px; }
+.stack { display: flex; flex-direction: column; gap: 22px; }
+.summary { font-size: 21px; line-height: 1.55; }
+.entry h3 { margin: 0; font-family: var(--f-head); font-weight: 800; font-size: 21px; line-height: 1.25; }
+.entry .meta { font-family: var(--f-head); font-size: 14px; color: var(--muted); letter-spacing: .02em; margin: 2px 0 8px; }
+.entry ul { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; }
+.entry li::marker { color: var(--red); }
+.skills { display: flex; flex-wrap: wrap; gap: 8px; }
+.skills span { font-family: var(--f-head); font-size: 14px; font-weight: 700; padding: 5px 12px; border-radius: 999px; background: var(--paper); border: 1.5px solid var(--line); }
+.skills span:nth-child(n+5) { background: var(--navy); color: var(--on-dark); border-color: var(--navy); }
+
+.highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.highlights a { text-decoration: none; color: var(--on-dark); display: flex; align-items: center; gap: 16px; padding: 18px 22px; border-radius: 14px; background: linear-gradient(135deg, var(--navy-2), var(--navy)); position: relative; overflow: hidden; transition: transform .25s; }
+.highlights a:nth-child(2) { background: linear-gradient(135deg, #d4af37, #9c7a1c); }
+.highlights a:hover { transform: translateY(-3px); }
+.highlights strong { font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: 60px; line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
+.highlights a:nth-child(2) strong { color: #141416; }
+.highlights a:nth-child(2) { color: #141416; }
+.highlights span { font-family: var(--f-head); font-weight: 700; font-size: 16px; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ---------- awards ---------- */
+.award { display: grid; grid-template-columns: 70px 1fr; gap: 16px; align-items: start; }
+.award .yr { font-family: var(--f-head); font-weight: 800; font-size: 14px; font-variant-numeric: tabular-nums; text-align: center; padding: 4px 0; border-radius: 6px; background: var(--gold); color: #1d1503; }
+
+/* ---------- work grid ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button { font-family: var(--f-head); font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--paper); color: var(--muted); border: 1.5px solid var(--line); padding: 7px 16px; cursor: pointer; border-radius: 999px; transition: all .2s; }
+.filters button:hover { border-color: var(--red); color: var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--red); }
+.works { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 26px; }
+.work { --c1: #3a3a40; --c2: #0e0e10; display: flex; flex-direction: column; gap: 10px; min-width: 0; text-decoration: none; color: var(--ink); animation: rise .6s both; animation-delay: calc(var(--i) * 45ms); }
+@keyframes rise { from { transform: translateY(14px); } to { transform: none; } }
+.k-hi { --c1: #3a3a40; --c2: #0e0e10; }
+.k-news { --c1: #34343a; --c2: #0e0e10; }
+.k-sports { --c1: #36363c; --c2: #0e0e10; }
+.k-feature { --c1: #38383e; --c2: #0e0e10; }
+.k-c8 { --c1: #8a6d12; --c2: #1c1608; }
+.k-other { --c1: #33333a; --c2: #0e0e10; }
+.thumb { position: relative; aspect-ratio: 16/9; max-width: 100%; border-radius: 14px; overflow: hidden; color: #fff;
+  background: radial-gradient(120% 90% at 0% 0%, var(--c1), transparent 70%), linear-gradient(135deg, var(--c1), var(--c2));
+  box-shadow: 0 10px 24px rgba(26,20,32,.18); transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s; }
+.thumb::before { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,.28) 48%, transparent 62%); transform: translateX(-120%); transition: transform .8s; }
+.grain { position: absolute; inset: 0; opacity: .35; background: repeating-linear-gradient(0deg, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); mix-blend-mode: overlay; }
+.thumb .fmt { position: absolute; left: 12px; top: 10px; font-family: var(--f-head); font-weight: 800; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; background: rgba(0,0,0,.28); padding: 3px 8px; border-radius: 4px; }
+.badges { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.badge { background: var(--gold); color: #1d1503; font-family: var(--f-head); font-weight: 800; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+.thumb .ttl { position: absolute; left: 14px; right: 70px; bottom: 12px; font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: 26px; line-height: .95; text-transform: uppercase; text-wrap: balance; text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+.thumb .play { position: absolute; right: 14px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.95); display: grid; place-items: center; transition: transform .35s; box-shadow: 0 0 0 0 rgba(255,255,255,.5); }
+.thumb .play::after { content: ""; border-left: 14px solid var(--c2); border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+.thumb .rec { position: absolute; left: 12px; top: 38px; font-family: var(--f-head); font-weight: 800; font-size: 10px; letter-spacing: .14em; display: flex; align-items: center; gap: 5px; opacity: 0; transition: opacity .3s; }
+.thumb .rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #ff3b4f; animation: blink 1s steps(1) infinite; }
+.work h3 { margin: 0; font-family: var(--f-head); font-weight: 800; font-size: 18px; line-height: 1.25; transition: color .2s; }
+.work .watch { font-family: var(--f-head); font-weight: 700; font-size: 14px; color: var(--red); }
+.work .watch span { display: inline-block; transition: transform .25s; }
+.work:hover .thumb, .work:focus-visible .thumb { transform: translateY(-6px) scale(1.02) rotate(-.4deg); box-shadow: 0 22px 40px rgba(26,20,32,.32), 0 0 0 3px var(--c1); }
+.work:hover .thumb::before { transform: translateX(120%); }
+.work:hover .play { transform: scale(1.15); animation: pulse 1.2s infinite; }
+.work:hover .rec { opacity: 1; }
+.work:hover h3 { color: var(--red); }
+.work:hover .watch span { transform: translateX(4px); }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,.6); } 100% { box-shadow: 0 0 0 16px rgba(255,255,255,0); } }
+
+footer { background: var(--navy); color: rgba(251,246,243,.8); }
+footer .wrap { padding-block: 24px 40px; font-family: var(--f-head); font-size: 14px; }
+
+@media (max-width: 760px) {
+  .mast-grid { grid-template-columns: 1fr; gap: 8px; padding-block: 32px 0; }
+  .mast-text { padding-bottom: 8px; }
+  .portrait { justify-self: center; width: min(78%, 300px); margin-top: 16px; }
+  .row { grid-template-columns: 1fr; gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.thumb { border: 1px solid rgba(212,175,55,.35); }
+.thumb .ttl { color: #f2f0ea; }
+.work:has(.badges) .thumb .ttl { color: #e8d08a; }
+.thumb .play::after { border-left-color: #141416; }
+.work .watch, .label, .work:hover h3 { color: var(--accent); }
+
+/* Dom's added colors: silver #d1d2d4, deep navy #10223b, crimson #a22e33 */
+.k-hi { --c1: #a22e33; --c2: #1e0a0c; }
+.k-news { --c1: #10223b; --c2: #07101d; }
+.k-sports { --c1: #1a3558; --c2: #10223b; }
+.k-feature { --c1: #6b6c70; --c2: #1a1a1d; }
+.k-other { --c1: #4a4b4f; --c2: #10223b; }
+.onair { background: var(--crimson); color: #fff; box-shadow: 0 0 0 4px rgba(162,46,51,.3); }
+.onair .dot { background: #fff; }
+.role { color: var(--silver); }
+.name span { -webkit-text-stroke-color: var(--gold); }
+.tags span { background: rgba(209,210,212,.12); border-color: rgba(209,210,212,.35); color: var(--silver); }
+.mast nav { background: rgba(16,34,59,.65); }
+.mast nav a { color: var(--silver); }
+.highlights a:nth-child(1) { background: linear-gradient(135deg, #1a3558, #10223b); }
+.skills span { background: var(--silver); border-color: var(--silver); color: #141416; }
+.skills span:nth-child(n+5) { background: #10223b; border-color: #10223b; color: var(--silver); }
+.entry li::marker { color: var(--crimson); }
+.filters button[aria-pressed="true"] { background: var(--crimson); border-color: var(--crimson); color: #fff; }
+.filters button:hover { border-color: var(--crimson); }
+.work:hover .thumb, .work:focus-visible .thumb { box-shadow: 0 22px 40px rgba(16,34,59,.35), 0 0 0 3px var(--gold); }
+.thumb .rec::before { background: #ff4d55; }
+footer { background: #10223b; color: var(--silver); }
+
+/* photo frame: even gold border on all sides, fully inside the header */
+.mast-grid { align-items: center; padding-block: 48px; }
+.mast-text { padding-bottom: 0; }
+.portrait::before { content: none; }
+.portrait img { border-radius: 16px; border: 3px solid var(--gold); box-shadow: 0 0 0 6px rgba(212,175,55,.15), 0 24px 50px rgba(0,0,0,.45); }
+@media (max-width: 760px) { .mast-grid { padding-block: 32px; } }
+
+/* ---------- hire me ---------- */
+.hire-intro { display: flex; flex-direction: column; gap: 10px; }
+.kicker { font-family: var(--f-head); font-weight: 800; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--crimson); }
+.hire-title { margin: 0; font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: clamp(34px, 6vw, 56px); line-height: .95; text-transform: uppercase; text-wrap: balance; }
+.svc-group { display: flex; flex-direction: column; gap: 16px; }
+.svc-head { display: flex; align-items: center; gap: 12px; }
+.svc-head h3 { margin: 0; font-family: var(--f-head); font-weight: 800; font-size: 24px; }
+.svc-tag { display: inline-block; font-family: var(--f-head); font-weight: 800; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; background: var(--gold); color: #141416; }
+.svc-tag.video { background: var(--crimson); color: #fff; }
+.svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+.svc { position: relative; background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; gap: 10px; min-width: 0; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.svc:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 16px 32px rgba(16,34,59,.15); }
+.svc.featured { background: linear-gradient(160deg, #1a3558, #10223b); color: var(--silver); border-color: var(--gold); }
+.svc.featured h4 { color: #fff; }
+.svc h4 { margin: 0; font-family: var(--f-head); font-weight: 800; font-size: 20px; }
+.pop { position: absolute; top: -11px; right: 16px; background: var(--gold); color: #141416; font-family: var(--f-head); font-weight: 800; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; }
+.price { font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: 46px; line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 6px; }
+.svc.featured .price { color: var(--gold); }
+.price small { font-stretch: 100%; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.svc.featured .price small { color: var(--silver); }
+.svc ul, .fine { margin: 0; padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; font-size: 16px; }
+.svc li::marker, .fine li::marker { color: var(--crimson); }
+.svc.featured li::marker { color: var(--gold); }
+.combo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 28px; border-radius: 16px; background: linear-gradient(135deg, #d4af37, #9c7a1c); color: #141416; }
+.combo h3 { margin: 8px 0 4px; font-family: var(--f-head); font-weight: 900; font-size: 26px; }
+.combo .svc-tag { background: #141416; color: var(--gold); }
+.combo .price { color: #141416; font-size: 60px; }
+.combo .price small { color: #3a2e08; }
+.book { border-radius: 16px; padding: 28px; background: linear-gradient(160deg, #10223b, #0e0e10); color: var(--silver); display: flex; flex-direction: column; gap: 10px; }
+.book h3 { margin: 0; font-family: var(--f-head); font-stretch: 75%; font-weight: 900; font-size: 40px; text-transform: uppercase; color: #fff; }
+.book-ways { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 6px; }
+.btn { display: inline-block; background: var(--crimson); color: #fff; text-decoration: none; font-family: var(--f-head); font-weight: 800; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; padding: 12px 22px; border-radius: 999px; transition: transform .2s, background .2s; }
+.btn:hover { transform: translateY(-2px); background: #b93a3f; }
+.book .email { font-family: var(--f-head); font-size: 16px; user-select: all; }
+.price.quote { font-size: 30px; line-height: 1.05; }
+.ig-top { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-head); font-weight: 800; font-size: 15px; text-decoration: none; color: #fff; padding: 9px 16px; border-radius: 999px; background: linear-gradient(135deg, #a22e33, #10223b); transition: transform .2s; }
+.ig-top:hover { transform: translateY(-2px); }
+.ig-dot { width: 16px; height: 16px; border: 2px solid currentColor; border-radius: 5px; position: relative; }
+.ig-dot::after { content: ""; position: absolute; inset: 3px; border: 2px solid currentColor; border-radius: 50%; }
+.svc-note { margin: -6px 0 0; color: var(--muted); font-size: 16px; }
+.combo-list { margin: 6px 0 0; padding-left: 1.1em; font-size: 16px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.gallery img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 10px; }
+.gal-empty { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; padding: 48px 24px; text-align: center; border: 2px dashed var(--line); border-radius: 16px; color: var(--muted); }
+.gal-empty strong { font-family: var(--f-head); font-size: 22px; color: var(--ink); }
+.svc-book { margin-top: auto; align-self: flex-start; font-family: var(--f-head); font-weight: 800; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; color: #fff; background: var(--crimson); padding: 9px 16px; border-radius: 999px; transition: transform .2s, background .2s; }
+.svc-book:hover { transform: translateY(-2px); background: #b93a3f; }
+.svc.featured .svc-book { background: var(--gold); color: #141416; }
+.svc ul { margin-bottom: 6px; }
+.combo-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.btn.dark { background: #141416; color: var(--gold); }
+.btn.dark:hover { background: #000; }
+.btn.ghost { background: transparent; border: 1.5px solid rgba(209,210,212,.5); color: var(--silver); }
+.btn.ghost:hover { background: rgba(255,255,255,.08); }
+.sq-embed:empty { display: none; }
+.sq-embed { margin-top: 16px; background: #fff; border-radius: 12px; overflow: hidden; }
+@media (max-width: 760px) { .combo-right { align-items: flex-start; } }
+.book { display: grid; grid-template-columns: 1fr auto; column-gap: 28px; }
+.book > h3, .book > p, .book > .book-ways, .book > .sq-embed { grid-column: 1; }
+.qr { grid-column: 2; grid-row: 1 / span 3; margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.qr img { width: 150px; height: 150px; background: #fff; padding: 8px; border-radius: 12px; border: 3px solid var(--gold); }
+.qr figcaption { font-family: var(--f-head); font-size: 13px; font-weight: 700; color: var(--silver); text-align: center; }
+.book > .sq-embed { grid-column: 1 / -1; }
+@media (max-width: 760px) { .book { grid-template-columns: 1fr; } .qr { grid-column: 1; grid-row: auto; align-items: flex-start; margin-top: 12px; } }
+
+
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="wrap mast-grid">
+    <div class="mast-text">
+      <div class="onair"><span class="dot"></span>CCNN Live</div>
+      <h1 class="name">Dominic<br><span>Angulo</span></h1>
+      <div class="role">Videographer · Editor · Producer</div>
+      <div class="tags"><span>3× Suncoast Emmy winner</span><span>Miami, Florida</span><span>Columbus HS, Class of 2028</span></div>
+      <div class="contact">
+        <span>dangulo28014@columbushs.com</span>
+        <span>dominicangulo6@gmail.com</span>
+        <a href="https://www.instagram.com/roseathletics_grm/" target="_blank" rel="noopener">Instagram @roseathletics_grm</a>
+      </div>
+    </div>
+    <figure class="portrait"><img src="dom.jpg" alt="Dominic Angulo wearing a CCNN Live jacket" width="720" height="1080"></figure>
+  </div>
+  <nav class="wrap" aria-label="Pages">
+    <a href="#resume">Resume</a>
+    <a href="#awards">Awards</a>
+    <a href="#work">Work</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#hire">Hire Me</a>
+  </nav>
+</header>
+
+<main>
+<!-- RESUME -->
+<section data-page="resume" class="wrap">
+  <div class="row">
+    <div class="label">Profile</div>
+    <p class="summary">Videographer, editor and producer at CCNN, Christopher Columbus High School's broadcast program. Three-time Suncoast Emmy winner covering sports, news and human interest stories across Miami, with packages for Telemundo 51's FIFA World Cup coverage.</p>
+  </div>
+
+  <div class="row">
+    <div class="label">Highlights</div>
+    <div class="highlights">
+      <a href="#awards"><strong>3</strong><span>Suncoast Emmys</span></a>
+      <a href="#awards"><strong>2</strong><span>Crazy 8s titles</span></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="label">Experience</div>
+    <div class="stack">
+      <div class="entry">
+        <h3>CCNN, Videographer, Editor &amp; Producer</h3>
+        <div class="meta">Christopher Columbus High School · 2024 to present</div>
+        <ul>
+          <li>Shoot, edit and produce news, sports and human interest packages.</li>
+          <li>Won Crazy 8s championships with CCNN in 2025 and 2026.</li>
+          <li>Producer of <em>The Ship</em>, CCNN's sports show.</li>
+          <li>Former main producer of <em>The Crusade</em>, CCNN's social media show.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <h3>Telemundo 51, FIFA World Cup Coverage</h3>
+        <div class="meta">Miami, FL · 2026</div>
+        <ul><li>Contributed packages to Telemundo 51's coverage of the FIFA World Cup. <span class="ph">Package links coming</span></li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="label">Skills</div>
+    <div class="skills">
+      <span>Field reporting</span><span>Interviewing</span><span>Video shooting</span><span>Video editing</span><span>Adobe Premiere Pro</span><span>Adobe After Effects</span><span>Adobe Lightroom</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="label">Education</div>
+    <div class="entry">
+      <h3>Christopher Columbus High School</h3>
+      <div class="meta">Miami, FL · Class of 2028</div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section data-page="awards" class="wrap" hidden>
+  <div class="row">
+    <div class="label">Suncoast Emmys</div>
+    <div class="stack">
+      <div class="award"><div class="yr">2025</div><div class="entry"><h3>Suncoast Emmy, Sports</h3><div class="meta">A Vision of Strength: Steven’s Journey Through Loss · <a href="https://www.youtube.com/watch?v=g2KJlQrv0Kc" target="_blank" rel="noopener">Watch</a></div></div></div>
+      <div class="award"><div class="yr">2025</div><div class="entry"><h3>Suncoast Emmy, Human Interest</h3><div class="meta">From Hive to Heart · <a href="https://www.youtube.com/watch?v=o7X9OEiNoi0" target="_blank" rel="noopener">Watch</a></div></div></div>
+      <div class="award"><div class="yr">2026</div><div class="entry"><h3>Suncoast Emmy</h3><div class="meta">Khia’s Quiet Calling · <a href="https://www.youtube.com/watch?v=5PxgYg0AI7E" target="_blank" rel="noopener">Watch</a></div></div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">STN</div>
+    <div class="stack">
+      <div class="award"><div class="yr">2026</div><div class="entry"><h3>2nd Place, Human Interest</h3><div class="meta">Student Television Network · <a href="https://www.youtube.com/watch?v=Y3leIt3r3w0" target="_blank" rel="noopener">Watch</a></div></div></div>
+      <div class="award"><div class="yr">2025</div><div class="entry"><h3>2nd Place, Human Interest, STN Challenge</h3><div class="meta">Khia’s Quiet Calling · <a href="https://www.youtube.com/watch?v=5PxgYg0AI7E" target="_blank" rel="noopener">Watch</a></div></div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="label">Crazy 8s</div>
+    <div class="stack">
+      <div class="award"><div class="yr">2026</div><div class="entry"><h3>Crazy 8s Champions, 4th year in a row</h3><div class="meta">Crazy 8s 2026 · <a href="https://www.youtube.com/watch?v=7pmM6zCs1PM" target="_blank" rel="noopener">Watch</a></div></div></div>
+      <div class="award"><div class="yr">2025</div><div class="entry"><h3>Crazy 8s Champions, 3rd year in a row</h3><div class="meta">Crazy 8s Tampa 2025 · <a href="https://www.youtube.com/watch?v=M8OcIfqwYYw" target="_blank" rel="noopener">Watch</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section data-page="work" class="wrap" hidden>
+  <p class="summary">Stories I've reported, shot and edited. Each one opens on YouTube.</p>
+  <div class="filters" role="group" aria-label="Filter work">
+    <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+    <button type="button" id="f-hi" data-f="hi" aria-pressed="false">Human Interest</button>
+    <button type="button" id="f-news" data-f="news" aria-pressed="false">News</button>
+    <button type="button" id="f-sports" data-f="sports" aria-pressed="false">Sports</button>
+    <button type="button" id="f-feature" data-f="feature" aria-pressed="false">Features</button>
+    <button type="button" id="f-c8" data-f="c8" aria-pressed="false">Crazy 8s</button>
+  </div>
+  <div class="works" id="work-grid">
+    <a class="work k-hi" data-k="hi" href="https://www.youtube.com/watch?v=5PxgYg0AI7E" target="_blank" rel="noopener" style="--i:1">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Human Interest</span><span class="badges"><span class="badge">Suncoast Emmy</span><span class="badge">STN 2nd Place</span></span><span class="ttl">Khia’s Quiet Calling</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Khia’s Quiet Calling</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-hi" data-k="hi" href="https://www.youtube.com/watch?v=o7X9OEiNoi0" target="_blank" rel="noopener" style="--i:2">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Human Interest</span><span class="badges"><span class="badge">Suncoast Emmy</span></span><span class="ttl">From Hive to Heart</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>From Hive to Heart</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-sports" data-k="sports" href="https://www.youtube.com/watch?v=g2KJlQrv0Kc" target="_blank" rel="noopener" style="--i:3">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Sports</span><span class="badges"><span class="badge">Suncoast Emmy</span></span><span class="ttl">A Vision of Strength: Steven’s Journey Through Loss</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>A Vision of Strength: Steven’s Journey Through Loss</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-hi" data-k="hi" href="https://www.youtube.com/watch?v=Y3leIt3r3w0" target="_blank" rel="noopener" style="--i:4">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Human Interest</span><span class="badges"><span class="badge">STN 2nd Place</span></span><span class="ttl">STN Human Interest 2026</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>STN Human Interest 2026</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-c8" data-k="c8" href="https://www.youtube.com/watch?v=7pmM6zCs1PM" target="_blank" rel="noopener" style="--i:5">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Crazy 8s</span><span class="badges"><span class="badge">Champions</span></span><span class="ttl">Crazy 8s 2026</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Crazy 8s 2026</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-c8" data-k="c8" href="https://www.youtube.com/watch?v=M8OcIfqwYYw" target="_blank" rel="noopener" style="--i:6">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Crazy 8s</span><span class="badges"><span class="badge">Champions</span></span><span class="ttl">Crazy 8s Tampa 2025</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Crazy 8s Tampa 2025</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-feature" data-k="feature" href="https://www.youtube.com/watch?v=73Eoi-AHLA0" target="_blank" rel="noopener" style="--i:7">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Feature</span><span class="ttl">The Legacy of Leon</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>The Legacy of Leon</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-news" data-k="news" href="https://www.youtube.com/watch?v=_TFmMtmqMWY" target="_blank" rel="noopener" style="--i:8">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">News</span><span class="ttl">Sports, Shifts, and Homework</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Sports, Shifts, and Homework</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-news" data-k="news" href="https://www.youtube.com/watch?v=CqZ2mp-jfMQ" target="_blank" rel="noopener" style="--i:9">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">News</span><span class="ttl">Gulf of Mexico</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Gulf of Mexico</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-news" data-k="news" href="https://www.youtube.com/watch?v=IeQpxWzlZNg" target="_blank" rel="noopener" style="--i:10">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">News</span><span class="ttl">Vaccine Mandate</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Vaccine Mandate</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-hi" data-k="hi" href="https://www.youtube.com/watch?v=suT4aWH1-R8" target="_blank" rel="noopener" style="--i:11">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Human Interest</span><span class="ttl">STN Human Interest 2025</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>STN Human Interest 2025</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-other" data-k="other" href="https://www.youtube.com/watch?v=FNXSrsycHu0" target="_blank" rel="noopener" style="--i:12">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">FSPA Digitals</span><span class="ttl">Before the Bell</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Before the Bell</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+    <a class="work k-c8" data-k="c8" href="https://www.youtube.com/watch?v=yv_fO88CHbc" target="_blank" rel="noopener" style="--i:13">
+      <div class="thumb"><span class="grain" aria-hidden="true"></span><span class="fmt">Crazy 8s practice</span><span class="ttl">Trolley Man</span><span class="play" aria-hidden="true"></span><span class="rec" aria-hidden="true">REC</span></div>
+      <h3>Trolley Man</h3><p class="watch">Watch on YouTube <span aria-hidden="true">›</span></p>
+    </a>
+  </div>
+</section>
+
+<!-- HIRE ME -->
+<section data-page="hire" class="wrap" hidden>
+  <div class="hire-intro">
+    <a class="ig-top" href="https://www.instagram.com/roseathletics_grm/" target="_blank" rel="noopener"><span class="ig-dot" aria-hidden="true"></span>@roseathletics_grm on Instagram</a>
+    <p class="kicker">Available for bookings in Miami</p>
+    <h2 class="hire-title">Photo &amp; Video for Events or Sports Games</h2>
+    <p class="summary">Game action, team and player content, birthdays, quinces, parties, school events and social media videos. If you have an event, I can cover it.</p>
+  </div>
+
+  <div class="svc-group">
+    <div class="svc-head"><span class="svc-tag">Photo</span><h3>Photography</h3></div>
+    <div class="svc-grid">
+      <article class="svc"><h4>Sports Game</h4><div class="price"><small>from</small>$65</div><ul><li>Full game coverage</li><li>35 edited photos</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+      <article class="svc featured"><span class="pop">Recommended</span><h4>Event</h4><div class="price"><small>from</small>$150</div><ul><li>Birthdays, quinces, parties, school events</li><li>2 hours of coverage</li><li>45 edited photos in an online gallery</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+      <article class="svc"><h4>Portraits</h4><div class="price quote">Ask for a quote</div><ul><li>Players, teams, coaches or personal portraits</li><li>Price depends on how many photos you want and the size of the team</li><li>Message me with the number of photos and people for a quote</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+    </div>
+  </div>
+
+  <div class="svc-group">
+    <div class="svc-head"><span class="svc-tag video">Video</span><h3>Videography</h3></div>
+    <p class="svc-note">For any event: sports games, quinces, parties, school events and more.</p>
+    <div class="svc-grid">
+      <article class="svc"><h4>Social Media Reel</h4><div class="price"><small>from</small>$50</div><ul><li>30 second vertical video</li><li>Captions and music included</li><li>Each extra reel is another $50</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+      <article class="svc"><h4>Highlight Reel</h4><div class="price"><small>from</small>$100</div><ul><li>45 second to 1 minute edit with music</li><li>Each extra reel is another $100</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+      <article class="svc featured"><span class="pop">Recommended</span><h4>Event Recap</h4><div class="price"><small>from</small>$250</div><ul><li>1 to 2 minute recap video</li><li>Plus a vertical version for social media</li></ul><a class="svc-book" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book this <span aria-hidden="true">›</span></a></article>
+    </div>
+  </div>
+
+  <div class="combo">
+    <div><span class="svc-tag">Photo + Video</span><h3>Full Coverage Package</h3>
+      <ul class="combo-list"><li>75 edited photos</li><li>Horizontal video, 1 to 3 minutes, your choice of length</li><li>Vertical video for social media, the same length or shorter</li></ul></div>
+    <div class="combo-right"><div class="price big"><small>from</small>$550</div><a class="btn dark" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book Full Coverage</a></div>
+  </div>
+
+  <div class="row">
+    <div class="label">Extras</div>
+    <ul class="fine">
+      <li>Extra hours are $20 per hour.</li>
+      <li>Extra edited photos are $3 each.</li>
+      <li>Longer videos cost extra. Just ask for the length you want.</li>
+      <li>Locations far from Miami may add a travel charge.</li>
+      <li>Need something different? Ask and I'll put together a custom quote.</li>
+    </ul>
+  </div>
+
+  <div class="book" id="book-online">
+    <h3>Book &amp; Pay Online</h3>
+    <p>Pick your service, choose a day and time I'm available, and pay to lock it in. You'll get a confirmation email right away.</p>
+    <div class="book-ways">
+      <a class="btn" href="https://app.squareup.com/appointments/book/7luho4os7abw6f/L4WCJ4VAT6HWG/start" target="_blank" rel="noopener">Book Now</a>
+      <a class="btn ghost" href="https://www.instagram.com/roseathletics_grm/" target="_blank" rel="noopener">Questions? DM on Instagram</a>
+      <span class="email">dominicangulo6@gmail.com</span>
+    </div>
+    <figure class="qr"><img src="qr.png" alt="QR code that opens Dominic's Square booking page" width="340" height="340"><figcaption>Scan to book from your phone</figcaption></figure>
+    <div class="sq-embed"><!-- Start Square Appointments Embed Code --><script src='https://square.site/appointments/buyer/widget/7luho4os7abw6f/L4WCJ4VAT6HWG.js'></script><!-- End Square Appointments Embed Code --></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section data-page="gallery" class="wrap" hidden>
+  <div class="hire-intro">
+    <p class="kicker">Photo gallery</p>
+    <h2 class="hire-title">My Work in Photos</h2>
+  </div>
+  <div class="gallery" id="gallery">
+    <div class="gal-empty">
+      <strong>Photos coming soon</strong>
+      <span>Game action, events and portraits will show here. In the meantime, see more on <a href="https://www.instagram.com/roseathletics_grm/" target="_blank" rel="noopener">Instagram</a>.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">Dominic Angulo · Student Broadcast Journalist · Miami, FL</div></footer>
+
+<script>
+(function () {
+  var pages = ["resume", "awards", "work", "gallery", "hire"];
+  function show() {
+    var id = (location.hash || "#resume").slice(1);
+    if (pages.indexOf(id) < 0) id = "resume";
+    document.querySelectorAll("section[data-page]").forEach(function (s) { s.hidden = s.dataset.page !== id; });
+    document.querySelectorAll("nav a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", show);
+  show();
+  document.querySelectorAll(".filters button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var f = b.dataset.f;
+      document.querySelectorAll(".filters button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      document.querySelectorAll("#work-grid .work").forEach(function (t) { t.hidden = f !== "all" && t.dataset.k !== f; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
